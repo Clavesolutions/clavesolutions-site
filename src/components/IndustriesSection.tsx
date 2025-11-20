@@ -131,7 +131,7 @@ export default function IndustriesSection({ onBookAuditClick }: IndustriesSectio
               </h3>
               
               <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                For firms where matters, clients and billing live across Clio, email, spreadsheets and accounting.
+                Matters, clients, and billing scattered across practice management, email, spreadsheets, and accounting.
               </p>
               
               {/* We automate */}
@@ -231,7 +231,7 @@ export default function IndustriesSection({ onBookAuditClick }: IndustriesSectio
               </h3>
               
               <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                For teams juggling Procore, email and accounting while RFIs, change orders and daily reports pile up.
+                Bids, change orders, and daily reports stuck between field apps, inboxes, and accounting.
               </p>
               
               {/* We automate */}

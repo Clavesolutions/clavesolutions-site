@@ -979,16 +979,16 @@
     max-width: var(--container-xs);
   }
 
+  .min-w-\[140px\] {
+    min-width: 140px;
+  }
+
   .min-w-\[160px\] {
     min-width: 160px;
   }
 
   .min-w-\[180px\] {
     min-width: 180px;
-  }
-
-  .min-w-\[200px\] {
-    min-width: 200px;
   }
 
   .flex-1 {
@@ -3791,12 +3791,6 @@
   }
 
   @media (width >= 40rem) {
-    .sm\:min-w-\[240px\] {
-      min-width: 240px;
-    }
-  }
-
-  @media (width >= 40rem) {
     .sm\:flex-row {
       flex-direction: row;
     }
@@ -4080,8 +4074,8 @@
   }
 
   @media (width >= 48rem) {
-    .md\:min-w-\[280px\] {
-      min-width: 280px;
+    .md\:min-w-\[220px\] {
+      min-width: 220px;
     }
   }
 

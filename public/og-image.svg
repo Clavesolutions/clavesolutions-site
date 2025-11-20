@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="keyGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#fcd34d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#06b6d4" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Left side: Key icon -->
+  <g transform="translate(180, 165)">
+    <!-- Cyan glow -->
+    <circle cx="150" cy="150" r="130" fill="#06b6d4" opacity="0.12" filter="url(#strongGlow)"/>
+    <circle cx="150" cy="150" r="90" fill="#06b6d4" opacity="0.08" filter="url(#glow)"/>
+    
+    <!-- Golden key -->
+    <g filter="url(#strongGlow)">
+      <rect x="50" y="140" width="180" height="20" fill="url(#keyGradient)" rx="10"/>
+      <circle cx="60" cy="150" r="45" fill="none" stroke="url(#keyGradient)" stroke-width="15"/>
+      <circle cx="60" cy="150" r="18" fill="url(#keyGradient)"/>
+      <rect x="215" y="140" width="12" height="38" fill="url(#keyGradient)" rx="4"/>
+      <rect x="230" y="140" width="12" height="26" fill="url(#keyGradient)" rx="4"/>
+      <rect x="245" y="140" width="12" height="32" fill="url(#keyGradient)" rx="4"/>
+    </g>
+  </g>
+  
+  <!-- Right side: Text -->
+  <g transform="translate(500, 260)">
+    <!-- Company name -->
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="url(#textGradient)" filter="url(#glow)">
+      Clave Solutions
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#94a3b8">
+      B2B Automation & Integration
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="300" fill="#64748b">
+      Connect your tools. Automate your work.
+    </text>
+  </g>
+  
+  <!-- Bottom accent line -->
+  <line x1="100" y1="580" x2="1100" y2="580" stroke="#06b6d4" stroke-width="2" opacity="0.3"/>
+</svg>

@@ -6,7 +6,7 @@ import { useEffect } from 'react';
  */
 export default function SiteMetadata() {
   useEffect(() => {
-    // Set page title
+    // Set page title - SHORTENED for better browser tab display
     document.title = "Clave Solutions - B2B Automation & Integration";
     
     // Add meta description
@@ -33,10 +33,11 @@ export default function SiteMetadata() {
       }
     };
 
-    // Standard favicons
-    addLink('icon', 'image/png', '32x32', '/favicon-32.png');
-    addLink('icon', 'image/png', '16x16', '/favicon-16.png');
-    addLink('apple-touch-icon', 'image/png', '180x180', '/apple-touch-icon.png');
+    // Standard favicons (SVG for better quality)
+    addLink('icon', 'image/svg+xml', '', '/favicon.svg');
+    addLink('icon', 'image/svg+xml', '32x32', '/favicon-32.svg');
+    addLink('icon', 'image/svg+xml', '16x16', '/favicon-16.svg');
+    addLink('apple-touch-icon', 'image/svg+xml', '180x180', '/apple-touch-icon.svg');
     
     // Web app manifest
     const manifestLink = document.querySelector('link[rel="manifest"]');

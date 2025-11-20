@@ -7,6 +7,7 @@ interface FloatingIconProps {
   origin: { x: number; y: number };
   pathIndex: number;
   onComplete: (pathIndex: number) => void;
+  staggerDelay?: number; // NEW: Stagger animation start
 }
 
 export default function FloatingIcon({ 
@@ -14,7 +15,8 @@ export default function FloatingIcon({
   iconColor, 
   origin,
   pathIndex,
-  onComplete
+  onComplete,
+  staggerDelay = 0
 }: FloatingIconProps) {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,8 +34,8 @@ export default function FloatingIcon({
   const startX = origin.x;
   const startY = origin.y;
   
-  // Travel duration: 14s on mobile (20% slower), 11.5s on desktop
-  const travelDuration = isMobile ? 14 : 11.5;
+  // Travel duration: 16s on mobile (30% slower than before), 11.5s on desktop
+  const travelDuration = isMobile ? 16 : 11.5;
   
   // Respawn delay: 3s after dissolving
   const respawnDelay = 3;
@@ -89,7 +91,9 @@ export default function FloatingIcon({
         scale: {
           duration: travelDuration,
           times: [0, 0.1, 0.3, 0.5, 0.7, 0.9, 1]
-        }
+        },
+        // NEW: Add stagger delay to animation start
+        delay: staggerDelay
       }}
     >
       {/* Icon card with premium effects - Reduced size by ~15% (64px -> 54px) */}

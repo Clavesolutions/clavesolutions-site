@@ -122,15 +122,35 @@ export default function FloatingHero({ onBookAuditClick }: FloatingHeroProps) {
   const nextIconIndexRef = useRef(0); // Which icon to spawn next (cycles 0-14)
   const spawnCountRef = useRef(0); // Total spawns (for left/right alternation)
   const keyCounterRef = useRef(0); // Unique key generator
+  const [hasStarted, setHasStarted] = useState(false); // NEW: Track if animation has started
 
   const ICON_DURATION = 13000; // 10s travel + 3s respawn delay
+  const INITIAL_DELAY = 1500; // 1.5s delay before first icon spawns (user reads hero copy)
+  const MAX_MOBILE_ICONS = 5; // Mobile: limit to 5 concurrent icons
+
+  // Start animation after initial delay
+  useEffect(() => {
+    const startTimer = setTimeout(() => {
+      setHasStarted(true);
+    }, INITIAL_DELAY);
+
+    return () => clearTimeout(startTimer);
+  }, []);
 
   // ASSEMBLY LINE SPAWN CONTROLLER
   useEffect(() => {
+    // Don't start spawning until after initial delay
+    if (!hasStarted) return;
+
     const spawnInterval = setInterval(() => {
       const currentTime = Date.now();
       
       setActiveIcons(prev => {
+        // Mobile: Limit to MAX_MOBILE_ICONS concurrent icons
+        if (isMobile && prev.size >= MAX_MOBILE_ICONS) {
+          return prev; // Skip spawn if at mobile limit
+        }
+
         // Determine if this spawn should be LEFT (0-5) or RIGHT (6-11)
         const isLeftTurn = spawnCountRef.current % 2 === 0;
         const pathRange = isLeftTurn ? [0, 1, 2, 3, 4, 5] : [6, 7, 8, 9, 10, 11];
@@ -165,7 +185,7 @@ export default function FloatingHero({ onBookAuditClick }: FloatingHeroProps) {
     }, 1300); // Spawn every 1.3 seconds (slowed from 1s to reduce concurrent icons)
 
     return () => clearInterval(spawnInterval);
-  }, [allIcons.length]); // Only recreate if number of icons changes
+  }, [hasStarted, isMobile, allIcons.length]); // Add dependencies
 
   // Callback when icon completes journey
   const handleIconComplete = (pathIndex: number) => {
@@ -242,15 +262,14 @@ export default function FloatingHero({ onBookAuditClick }: FloatingHeroProps) {
                   <RotatingAudience 
                     audiences={[
                       "law firms",
-                      "accounting firms",
-                      "construction companies",
-                      "field service teams",
+                      "accounting teams",
+                      "construction",
+                      "field services",
                       "distributors",
-                      "logistics teams",
-                      "retail & ecommerce",
-                      "operations leaders"
+                      "logistics",
+                      "retail ops"
                     ]}
-                    intervalMs={2500}
+                    intervalMs={4000}
                   />
                 </h2>
               </div>

@@ -322,7 +322,7 @@ export default function WhatWeDoSection({ onBookAuditClick }: WhatWeDoSectionPro
               <div className="relative z-10 mt-10 pt-6 border-t border-slate-700/50">
                 <div className="space-y-2 text-center">
                   <p className="text-slate-200 text-lg leading-relaxed">
-                    We map this lifecycle, then build integrations and automations on top of the tools you already use.
+                    We map this lifecycle, then connect and automate the tools you already use so work flows cleanly without manual handoffs.
                   </p>
                   <p className="text-slate-200 text-lg leading-relaxed">
                     Your team can focus on higher-value work instead of manual data babysitting.
