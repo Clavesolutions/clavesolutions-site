@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export default function SiteMetadata() {
   useEffect(() => {
     // Set page title
-    document.title = "Clave Solutions - Custom Automation & Integration for Mid-Market Operations";
+    document.title = "Clave Solutions - B2B Automation & Integration";
     
     // Add meta description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -67,7 +67,7 @@ export default function SiteMetadata() {
       }
     };
 
-    addOGMeta('og:title', 'Clave Solutions - Custom Automation & Integration');
+    addOGMeta('og:title', 'Clave Solutions - B2B Automation & Integration');
     addOGMeta('og:description', 'Stop losing time to disconnected systems. Custom integrations and automations for mid-market operations teams.');
     addOGMeta('og:type', 'website');
     addOGMeta('og:url', 'https://clavesolutions.ai');
@@ -85,7 +85,7 @@ export default function SiteMetadata() {
     };
 
     addTwitterMeta('twitter:card', 'summary_large_image');
-    addTwitterMeta('twitter:title', 'Clave Solutions - Custom Automation & Integration');
+    addTwitterMeta('twitter:title', 'Clave Solutions - B2B Automation & Integration');
     addTwitterMeta('twitter:description', 'Stop losing time to disconnected systems. Custom integrations for legal, construction, and logistics teams.');
     addTwitterMeta('twitter:image', 'https://clavesolutions.ai/og-image.png');
 
