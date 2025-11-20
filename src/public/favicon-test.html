@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Test - Clave Solutions</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+        h1 {
+            color: #06b6d4;
+        }
+        .test-section {
+            background: #1e293b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.pass {
+            background: #10b981;
+            color: white;
+        }
+        .status.fail {
+            background: #ef4444;
+            color: white;
+        }
+        img {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        code {
+            background: #334155;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        a {
+            color: #06b6d4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Favicon Test Page - Clave Solutions</h1>
+    
+    <div class="test-section">
+        <h2>✅ Quick Visual Check</h2>
+        <p>Look at your browser tab right now. Do you see the Clave logo or a generic icon?</p>
+        <ul>
+            <li>If you see the <strong>golden key logo</strong> → ✅ Favicon is working!</li>
+            <li>If you see a <strong>generic icon</strong> → ❌ Favicon files are missing</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>📁 File Check</h2>
+        <p>Click each link below. If the image loads, that file exists:</p>
+        
+        <div style="margin: 20px 0;">
+            <h3>16x16 Favicon:</h3>
+            <a href="/favicon-16.png" target="_blank">
+                <img src="/favicon-16.png" alt="16x16 favicon" width="16" height="16" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /favicon-16.png not found'">
+            </a>
+            <span id="status-16"></span>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>32x32 Favicon:</h3>
+            <a href="/favicon-32.png" target="_blank">
+                <img src="/favicon-32.png" alt="32x32 favicon" width="32" height="32" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /favicon-32.png not found'">
+            </a>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>192x192 Favicon (Android):</h3>
+            <a href="/favicon-192.png" target="_blank">
+                <img src="/favicon-192.png" alt="192x192 favicon" width="64" height="64" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /favicon-192.png not found'">
+            </a>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>512x512 Favicon (High-res):</h3>
+            <a href="/favicon-512.png" target="_blank">
+                <img src="/favicon-512.png" alt="512x512 favicon" width="64" height="64" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /favicon-512.png not found'">
+            </a>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>Apple Touch Icon:</h3>
+            <a href="/apple-touch-icon.png" target="_blank">
+                <img src="/apple-touch-icon.png" alt="Apple touch icon" width="64" height="64" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /apple-touch-icon.png not found'">
+            </a>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>OG Image (Social Sharing - 1200x630):</h3>
+            <a href="/og-image.png" target="_blank">
+                <img src="/og-image.png" alt="OG image" width="200" style="width: 200px; height: auto;" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /og-image.png not found'">
+            </a>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>Logo 512 (Structured Data):</h3>
+            <a href="/logo-512.png" target="_blank">
+                <img src="/logo-512.png" alt="Logo 512" width="64" height="64" onerror="this.parentElement.innerHTML='<span class=status class=fail>MISSING</span> /logo-512.png not found'">
+            </a>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔗 External Tools</h2>
+        <p>Test your favicon with these tools:</p>
+        <ul>
+            <li><a href="https://realfavicongenerator.net/favicon_checker" target="_blank">RealFaviconGenerator Checker</a></li>
+            <li><a href="https://search.google.com/test/rich-results" target="_blank">Google Rich Results Test</a></li>
+            <li><a href="https://cards-dev.twitter.com/validator" target="_blank">Twitter Card Validator</a></li>
+            <li><a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Sharing Debugger</a></li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>📋 Checklist</h2>
+        <p>Before deploying, make sure:</p>
+        <ul>
+            <li>✅ All 7 images above load successfully</li>
+            <li>✅ Browser tab shows your logo (not generic icon)</li>
+            <li>✅ <code>/site.webmanifest</code> file exists</li>
+            <li>✅ Your logo looks good on both light and dark backgrounds</li>
+            <li>✅ Logo is recognizable even at 16x16 size</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 Next Steps</h2>
+        <ol>
+            <li>Fix any missing files shown above</li>
+            <li>Deploy to Vercel: <code>git add . && git commit -m "Add favicon" && git push</code></li>
+            <li>Wait 1-3 days for Google to re-crawl your site</li>
+            <li>Check Google search results for your logo</li>
+        </ol>
+    </div>
+
+    <script>
+        // Check if manifest exists
+        fetch('/site.webmanifest')
+            .then(response => {
+                if (response.ok) {
+                    console.log('✅ site.webmanifest found');
+                } else {
+                    console.error('❌ site.webmanifest not found');
+                }
+            });
+    </script>
+</body>
+</html>
