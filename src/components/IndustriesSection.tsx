@@ -50,11 +50,11 @@ export default function IndustriesSection({ onBookAuditClick }: IndustriesSectio
                 audiences={[
                   "law firms",
                   "accounting teams",
-                  "construction companies",
+                  "contractors",
                   "field service teams",
                   "distributors",
                   "logistics operations",
-                  "retail & ecommerce brands"
+                  "retail brands"
                 ]}
                 intervalMs={2500}
               />

@@ -11,32 +11,19 @@ export default function RotatingAudience({
 }: RotatingAudienceProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [cycleCount, setCycleCount] = useState(0);
-  const maxCycles = 1; // Stop after 1 full cycle
-
   useEffect(() => {
-    // Stop rotation after one full cycle
-    if (cycleCount >= maxCycles) return;
-
     const interval = setInterval(() => {
       setIsTransitioning(true);
       
       setTimeout(() => {
-        setCurrentIndex((prev) => {
-          const nextIndex = (prev + 1) % audiences.length;
-          // If we've looped back to start, increment cycle count
-          if (nextIndex === 0) {
-            setCycleCount(c => c + 1);
-          }
-          return nextIndex;
-        });
+        setCurrentIndex((prev) => (prev + 1) % audiences.length);
         setIsTransitioning(false);
       }, 300); // Half of transition duration
       
     }, intervalMs);
 
     return () => clearInterval(interval);
-  }, [audiences.length, intervalMs, cycleCount]);
+  }, [audiences.length, intervalMs]);
 
   return (
     <span className="inline-block min-w-[140px] sm:min-w-[180px] md:min-w-[220px]" style={{ 

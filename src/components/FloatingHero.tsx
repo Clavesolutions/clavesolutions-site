@@ -263,11 +263,11 @@ export default function FloatingHero({ onBookAuditClick }: FloatingHeroProps) {
                     audiences={[
                       "law firms",
                       "accounting teams",
-                      "construction",
+                      "contractors",
                       "field services",
                       "distributors",
                       "logistics",
-                      "retail ops"
+                      "retail brands"
                     ]}
                     intervalMs={4000}
                   />
